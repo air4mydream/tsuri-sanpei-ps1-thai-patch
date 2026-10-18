@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "tool": {
+    "name": "Tsuri Thai Offline Patch Builder",
+    "version": "1.2"
+  },
+  "created_utc": "2026-10-17T17:37:58.486Z",
+  "game": {
+    "title": "Simple Character 2000 Series Vol.09 - Tsurikichi Sanpei - The Tsuri (Japan)",
+    "serial": "SLPS-03445"
+  },
+  "translation_version": "0.33",
+  "patch": {
+    "filename": "patch_th.bps",
+    "format": "BPS1",
+    "size": 2618658,
+    "sha256": "4141e9bdca73bef5eb7e9ee9f79411e05f16bd61a404f9acab57f06f4a9d1147",
+    "crc32": "2144df1c",
+    "bps_footer_crc32": "24cd3e1e",
+    "commands": [
+      "SourceRead",
+      "TargetRead"
+    ]
+  },
+  "source": {
+    "filename": "Simple Character 2000 Series Vol. 09 - Tsurikichi Sanpei - The Tsuri (Japan).bin",
+    "size": 266077056,
+    "sha256": "43f35a2a7f5057e0ffc86740221e26cd8f9050f0572b67e9a0749ca0a5981419",
+    "crc32": "1463101c",
+    "layout": {
+      "sector_bytes": 2352,
+      "user_data_offset": 24,
+      "volume_label": "SLPS_03445",
+      "boot": "SLPS_034.45"
+    }
+  },
+  "target": {
+    "filename": "Simple Character 2000 Series Vol. 09 - Tsurikichi Sanpei - The Tsuri (Japan).bin",
+    "output_filename": "TsuriKichiSanpei_TH_v0.33.bin",
+    "size": 266077056,
+    "sha256": "49e83ba6212cebfe26d3ea779a4c434269e37a98437d4d40e06cc61a6bdb785d",
+    "crc32": "d3cb5a92",
+    "layout": {
+      "sector_bytes": 2352,
+      "user_data_offset": 24,
+      "volume_label": "SLPS_03445",
+      "boot": "SLPS_034.45"
+    }
+  },
+  "module_checks": {
+    "source": [
+      {
+        "name": "CDFISH.BIN",
+        "expected": {
+          "validation": "japanese-vm-dialogue"
+        },
+        "size": 140180,
+        "extent": 187,
+        "sha256": "bae7fd32890471e67ecb82153c57ca4d666c41222e88c513d878bd7491a512a7",
+        "validation": {
+          "component": "source_CDFISH",
+          "size": 140180,
+          "sha256": "bae7fd32890471e67ecb82153c57ca4d666c41222e88c513d878bd7491a512a7",
+          "method": "Game boot ID, original VM dialogue structure, Japanese samples and known probe rejection. The selected full-disc SHA-256 defines the release source.",
+          "story_being_checked": 6,
+          "event_being_checked": 1,
+          "script_root": "0x800ec408",
+          "status": "PASS",
+          "dialogue_rows_checked": 72,
+          "japanese_characters": 891,
+          "chapters": [
+            {
+              "story": 1,
+              "event": 0,
+              "rows_checked": 12,
+              "japanese_characters": 160
+            },
+            {
+              "story": 2,
+              "event": 0,
+              "rows_checked": 12,
+              "japanese_characters": 159
+            },
+            {
+              "story": 3,
+              "event": 0,
+              "rows_checked": 12,
+              "japanese_characters": 168
+            },
+            {
+              "story": 4,
+              "event": 0,
+              "rows_checked": 12,
+              "japanese_characters": 163
+            },
+            {
+              "story": 5,
+              "event": 0,
+              "rows_checked": 12,
+              "japanese_characters": 136
+            },
+            {
+              "story": 6,
+              "event": 1,
+              "rows_checked": 12,
+              "japanese_characters": 105
+            }
+          ],
+          "clean_dump_certified": false,
+          "note": "This is a language/structure check, not certification against a pristine full-disc database. Exact full-disc SHA-256 is recorded separately for the public patcher."
+        },
+        "status": "PASS"
+      }
+    ],
+    "target": [
+      {
+        "name": "CDFISH.BIN",
+        "expected": {
+          "exported_size": 141312,
+          "sha256": "fc051b03feedb3d82da36ce3d983ba8357b655b52872307a946049e1b510119a"
+        },
+        "size": 140180,
+        "extent": 187,
+        "sha256": "48be6019daf97a809d714e75b667d172c242f2ec5a370018bca5c895bcae809e",
+        "validation": {
+          "status": "PASS",
+          "logical_size": 140180,
+          "logical_sha256": "48be6019daf97a809d714e75b667d172c242f2ec5a370018bca5c895bcae809e",
+          "reference_export_size": 141312,
+          "reference_export_sha256": "fc051b03feedb3d82da36ce3d983ba8357b655b52872307a946049e1b510119a",
+          "method": "trailing-zero-export-equivalence",
+          "canonical_export_sha256": "fc051b03feedb3d82da36ce3d983ba8357b655b52872307a946049e1b510119a",
+          "zero_padding_bytes": 1132,
+          "direction": "virtual-zero-suffix-for-validation",
+          "image_modified": false
+        },
+        "status": "PASS"
+      },
+      {
+        "name": "CDMGAME.BIN",
+        "expected": {
+          "exported_size": 65988,
+          "sha256": "17d6fc8e5dce943e8769d157c571d99e2f8ea6c81bc5fba553128559eb33821e"
+        },
+        "size": 65988,
+        "extent": 256,
+        "sha256": "17d6fc8e5dce943e8769d157c571d99e2f8ea6c81bc5fba553128559eb33821e",
+        "validation": {
+          "status": "PASS",
+          "logical_size": 65988,
+          "logical_sha256": "17d6fc8e5dce943e8769d157c571d99e2f8ea6c81bc5fba553128559eb33821e",
+          "reference_export_size": 65988,
+          "reference_export_sha256": "17d6fc8e5dce943e8769d157c571d99e2f8ea6c81bc5fba553128559eb33821e",
+          "method": "exact-logical-file",
+          "zero_padding_bytes": 0
+        },
+        "status": "PASS"
+      },
+      {
+        "name": "SLPS_034.45",
+        "expected": {
+          "exported_size": 333824,
+          "sha256": "0428f84e7bd84edb6309abc9ea5e4a79fc8f76b771c823e03b53e92b51dc7b81"
+        },
+        "size": 333824,
+        "extent": 24,
+        "sha256": "0428f84e7bd84edb6309abc9ea5e4a79fc8f76b771c823e03b53e92b51dc7b81",
+        "validation": {
+          "status": "PASS",
+          "logical_size": 333824,
+          "logical_sha256": "0428f84e7bd84edb6309abc9ea5e4a79fc8f76b771c823e03b53e92b51dc7b81",
+          "reference_export_size": 333824,
+          "reference_export_sha256": "0428f84e7bd84edb6309abc9ea5e4a79fc8f76b771c823e03b53e92b51dc7b81",
+          "method": "exact-logical-file",
+          "zero_padding_bytes": 0
+        },
+        "status": "PASS"
+      },
+      {
+        "name": "DATA.LMM",
+        "expected": {
+          "exported_size": 12713984,
+          "sha256": "6f7ed95b8c998c2304df3a6b476631780a4c0c16ea9a2aa2c446d49e9d7d1561"
+        },
+        "size": 12712412,
+        "extent": 306,
+        "sha256": "1c82c52a86af47d3d2d4225bd4bb194e05f8b7db9e70d9cad96349a0d7ea99da",
+        "validation": {
+          "status": "PASS",
+          "logical_size": 12712412,
+          "logical_sha256": "1c82c52a86af47d3d2d4225bd4bb194e05f8b7db9e70d9cad96349a0d7ea99da",
+          "reference_export_size": 12713984,
+          "reference_export_sha256": "6f7ed95b8c998c2304df3a6b476631780a4c0c16ea9a2aa2c446d49e9d7d1561",
+          "method": "trailing-zero-export-equivalence",
+          "canonical_export_sha256": "6f7ed95b8c998c2304df3a6b476631780a4c0c16ea9a2aa2c446d49e9d7d1561",
+          "zero_padding_bytes": 1572,
+          "direction": "virtual-zero-suffix-for-validation",
+          "image_modified": false
+        },
+        "status": "PASS"
+      }
+    ]
+  },
+  "verification": {
+    "project_files": "PASS",
+    "source_policy": "Use the selected Japanese source image as the release baseline; enforce its full-disc SHA-256 in the public patcher. Source language/structure check is not pristine-disc certification.",
+    "module_policy": "Pinned Thai exports may match exact logical bytes or proven trailing-zero equivalence in the same final 2048-byte sector. No image bytes are normalized or modified. Full-disc source/target hashes always refer to the exact selected BINs.",
+    "bps_round_trip": {
+      "status": "PASS",
+      "bytes_compared": 266077056,
+      "sha256": "49e83ba6212cebfe26d3ea779a4c434269e37a98437d4d40e06cc61a6bdb785d",
+      "crc32": "d3cb5a92",
+      "method": "Stream BPS commands, compare every reconstructed byte with the supplied Thai image, then SHA-256 and CRC32."
+    },
+    "checksum_self_tests": "PASS"
+  },
+  "statistics": {
+    "changed_bytes": 1593195,
+    "literal_bytes": 2563254,
+    "actions": 37109
+  },
+  "cue": {
+    "provided": true,
+    "template_filename": "TsuriKichiSanpei_TH_v0.33.cue",
+    "tracks": 1,
+    "source_filename": "Simple Character 2000 Series Vol. 09 - Tsurikichi Sanpei - The Tsuri (Japan).cue"
+  },
+  "privacy": {
+    "rom_uploaded": false,
+    "network_requests_required": false,
+    "rom_in_output_package": false
+  },
+  "cheats": {
+    "included": false,
+    "note": "Translation patch only. Distribute the optional DuckStation .cht separately."
+  }
+}

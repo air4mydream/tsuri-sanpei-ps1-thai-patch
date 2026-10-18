@@ -1,0 +1,182 @@
+; SLPS-03445 | Tsurikichi Sanpei - The Tsuri
+; Consolidated cheats v0.3 | 2026-10-17
+; รวมสูตรหลัก 6 สูตร และคำสั่งคืนความเร็วเดิม 2 คำสั่ง
+; ใช้รหัสเดิมทุกชุด โดยคง Unlock Assembly v0.2 ที่ทดสอบผ่านแล้ว
+;
+; วิธีติดตั้ง: ปิด DuckStation และสำรองไฟล์สูตรเดิมก่อน
+; วางไฟล์นี้ชื่อ SLPS-03445.cht ในโฟลเดอร์ cheats ของ DuckStation
+; ใช้วิธีแทนไฟล์โดยตรงแบบเดียวกับชุด Unlock ที่ใช้งานได้ แล้วบูตเกมใหม่
+; เลือกเปิดเฉพาะสูตรที่ต้องการในเมนู Cheats ของเกม
+;
+; Unlock_All_Story_Assembly_v02: ปลดล็อกทุกเนื้อเรื่อง รวมล่ามุจึโกโร่
+; Unlock_All_FreeFishing_Assembly_v02: ปลดล็อกจุดตกปลาทั้งห้าในโหมดอิสระ
+; เมื่อปิด Unlock ให้กลับเมนูหลักแล้วเข้าโหมดนั้นใหม่ เพื่ออ่านสถานะตามเซฟ
+;
+; คืนความเร็ว: ปิดสูตรลดความเร็วที่เกี่ยวข้องก่อน
+; เข้าโหมดนั้น แล้วเลือก System > Cheats > Apply Cheat > Restore_... ที่ตรงกัน
+; Restore เป็น Manual กดใช้ครั้งเดียว ไม่ต้องเปิดทำงานทุกเฟรม
+; Casting ต้องอยู่ในฉากตกปลาปกติ ส่วน HIT ต้องอยู่ในล่ามุจึโกโร่
+; ถ้ากด Restore ตอนอยู่คนละโหมด ให้เข้าโหมดที่ถูกต้องแล้วกดใหม่
+; หรือปิดสูตรช้าแล้วบูตเกมใหม่ โดยไม่โหลด Save State ที่เก็บค่าช้าไว้
+; ปิดสูตรลดความเร็วอย่างเดียวจะยังไม่คืนค่าที่เขียนลง RAM ไปแล้ว
+;
+; HIT ใช้ความเร็วขั้นต่ำ 1: ครั้งแรกเท่าเดิม ครั้งที่ 2-3 เหลือครึ่งหนึ่ง
+; CAST Unlimited จะยอมให้จบตามปกติเมื่อจับปลาได้ครบเป้าหมาย
+; ไม่มีสูตรต้นแบบปลดล็อกชุดเก่าที่ถูกแทนที่แล้ว และไม่มีแพตช์ทดสอบคำแปล RAM
+
+[Unlock_All_Story_Assembly_v02]
+Type = Assembly
+Activation = EndFrame
+.org 0x8001A8BC
+addiu s5, zero, 6
+.org 0x8001A9AC
+addiu v0, zero, 1
+.org 0x8001ABB0
+addiu v0, zero, 1
+
+[Unlock_All_FreeFishing_Assembly_v02]
+Type = Assembly
+Activation = EndFrame
+.org 0x8001ACFC
+addiu v0, zero, 1
+.org 0x8001AE38
+addiu v0, zero, 1
+
+[Normal_Fishing_Tension_Midpoint_v01]
+Type = Gameshark
+Activation = EndFrame
+Description = ตกปลาปกติ: คงแถบแรงตึงไว้ตรงกลางขณะสู้กับปลา
+C00E5F68 0E24
+C00E5F6A AC83
+C00E6060 0E20
+C00E6062 ACA3
+C0061954 0001
+C0061B08 0001
+80061974 0000
+80061976 0000
+80061970 003D
+80061972 0000
+00000000 FFFF
+
+[Normal_Fishing_Casting_Speed_Quarter_v01]
+Type = Gameshark
+Activation = EndFrame
+Description = ตกปลาปกติ: ลดความเร็วแถบ Casting เหลือ 1 ใน 4
+C00DF5D0 0DEC
+C00DF5D2 ACA2
+C00DF678 0DEC
+C00DF67A ACA2
+C00E1570 0DEC
+C00E1572 ACC2
+C00DF5CA 0003
+C00DF5FE 0003
+C00DF672 0003
+C00DF69E 0003
+800DF5C8 1840
+800DF5FC 1840
+800DF670 1840
+800DF69C 1840
+00000000 FFFF
+
+[Mujigoro_CAST_Unlimited_v01]
+Type = Gameshark
+Activation = EndFrame
+Description = ล่ามุจึโกโร่: เติม CAST ครั้งสุดท้าย จนจับปลาได้ครบเป้าหมาย
+C00D9902 2442
+C00D9908 5178
+C00D990A AC62
+C00E5178 000A
+C00E516E 0000
+C50E516C 000A
+C50E517C 000A
+800E5178 0009
+00000000 FFFF
+C00D9902 2442
+C00D9908 5178
+C00D990A AC62
+C00E5178 000A
+C00E516E FFFF
+C00E516C FFFF
+C50E517C 000A
+800E5178 0009
+00000000 FFFF
+C00D9902 2442
+C00D9908 5178
+C00D990A AC62
+C00E5178 000A
+C00E516E 0000
+C60E516C 0009
+C50E517C 0008
+800E5178 0009
+00000000 FFFF
+
+[Mujigoro_HIT_Speed_Slow_v01]
+Type = Gameshark
+Activation = EndFrame
+Description = ล่ามุจึโกโร่: ลดความเร็วแถบ HIT ช่วงกลางและท้ายประมาณ 1 ใน 4
+C00D9E24 45E0
+C00D9E26 2484
+C00D9E30 0000
+C00D9E32 9462
+C00D9E3C 5050
+C00D9E3E A682
+C00DA170 0001
+C00DA172 2406
+800E45E0 0001
+800E45E2 0001
+800E45E4 0001
+800E45E6 0001
+800E45E8 0001
+800E45EA 0001
+800E45EC 0002
+800E45EE 0002
+800E45F0 0002
+800E45F2 0003
+800E45F4 0003
+00000000 FFFF
+
+[Restore_Casting_Speed_Normal_Fishing]
+Type = Gameshark
+Activation = Manual
+Description = คืนความเร็ว Casting: ปิดสูตรช้าก่อน แล้วกด Apply Cheat ขณะอยู่ในฉากตกปลาปกติ
+C00DF5D0 0DEC
+C00DF5D2 ACA2
+C00DF678 0DEC
+C00DF67A ACA2
+C00E1570 0DEC
+C00E1572 ACC2
+C00DF5CA 0003
+C00DF5FE 0003
+C00DF672 0003
+C00DF69E 0003
+800DF5C8 18C0
+800DF5FC 18C0
+800DF670 18C0
+800DF69C 18C0
+00000000 FFFF
+
+[Restore_HIT_Speed_Mujigoro]
+Type = Gameshark
+Activation = Manual
+Description = คืนความเร็ว HIT: ปิดสูตรช้าก่อน แล้วกด Apply Cheat ขณะอยู่ในล่ามุจึโกโร่
+C00D9E24 45E0
+C00D9E26 2484
+C00D9E30 0000
+C00D9E32 9462
+C00D9E3C 5050
+C00D9E3E A682
+C00DA170 0001
+C00DA172 2406
+800E45E0 0001
+800E45E2 0002
+800E45E4 0002
+800E45E6 0004
+800E45E8 0004
+800E45EA 0004
+800E45EC 0008
+800E45EE 0008
+800E45F0 0008
+800E45F2 000A
+800E45F4 000C
+00000000 FFFF
+
