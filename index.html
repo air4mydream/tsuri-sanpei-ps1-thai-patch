@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="th">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; worker-src 'self'; connect-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+ <meta name="description" content="แพตช์ภาษาไทย Tsurikichi Sanpei สำหรับ PS1 ตรวจรอมและแปะแพตช์ในเครื่องคุณ โดยไม่อัปโหลดไฟล์เกม">
+ <meta name="theme-color" content="#143e34">
+ <title>Tsurikichi Sanpei — แพตช์ภาษาไทย v0.33</title>
+ <link rel="stylesheet" href="./assets/style.css">
+ <script defer src="./assets/release.js"></script>
+ <script defer src="./assets/patch-core.js"></script>
+ <script defer src="./assets/app.js"></script>
+</head>
+<body>
+ <header class="topbar"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true">釣</span><span>air4mydream<span class="brand-sub">THAI TRANSLATION PROJECT</span></span></a><span class="platform">PLAYSTATION · SLPS-03445</span></header>
+ <main>
+  <section class="hero" aria-labelledby="title">
+   <div class="hero-copy"><span class="eyebrow"><span class="dot"></span> แพตช์ภาษาไทย v0.33</span><p class="game-name">TSURIKICHI SANPEI · THE TSURI</p><h1 id="title">ออกตกปลากับซันเป้<br><span>ในภาษาไทย</span></h1><p class="intro">เลือกไฟล์เกมต้นฉบับของคุณ แล้วให้เราเตรียมฉบับภาษาไทย<br class="desktop-break">ให้พร้อมออกเดินทางอีกครั้ง</p><div class="privacy"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></svg><span>ไฟล์เกมอยู่ในเครื่องคุณตลอดการทำงาน<br><small>ไม่มีการอัปโหลด BIN หรือค่าแฮชไปยังเซิร์ฟเวอร์</small></span></div></div>
+   <div class="river" aria-hidden="true"><svg viewBox="0 0 430 290" fill="none"><circle cx="288" cy="93" r="57" fill="#e2bd68"/><path d="M0 165 82 98l64 52 87-56 104 73 93-40v163H0Z" fill="#2b5a49"/><path d="m0 198 104-49 95 50 114-42 117 39v94H0Z" fill="#47775d"/><path d="M307 190c-141 13 69 28-39 44-67 10-130 17-149 56h157c3-22 88-28 91-45 3-13-91-30-60-55Z" fill="#acc9b8"/><path d="M291 232c-35 5-57 13-63 18m89-35 14 4m-81 52-20 7" stroke="#edf1db" stroke-width="2" stroke-linecap="round"/><path d="m66 205 13-74 13 74m-10-37 34-57" stroke="#c6ae79" stroke-width="4" stroke-linecap="round"/><path d="M116 111q58-75 103-62m0 0q38 8 30 94" stroke="#e5d7a7" stroke-width="1.5"/><path d="M249 142v19m-4-4q4 8 8 0" stroke="#e5d7a7" stroke-width="1.5"/><path d="m163 65 6-3 6 3m20 34 5-2 5 2" stroke="#a4bd98" stroke-width="2" stroke-linecap="round"/></svg><span>いつもの川へ、もう一度。</span></div>
+  </section>
+  <section class="patch-card" aria-labelledby="patch-title">
+   <div class="card-heading"><div><p class="section-tag">เริ่มต้นที่นี่</p><h2 id="patch-title">แปะแพตช์ภาษาไทย</h2></div><span class="badge">BIN → BIN + CUE</span></div>
+   <ol class="steps" aria-label="ขั้นตอน"><li id="step-source" class="current"><span>1</span>เลือกต้นฉบับ</li><li id="step-check"><span>2</span>ตรวจและแปะแพตช์</li><li id="step-save"><span>3</span>บันทึกฉบับไทย</li></ol>
+   <label class="file-zone" for="rom-file"><svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5h17l8 8v28H12zM29 5v9h8"/><circle cx="24" cy="28" r="8"/><circle cx="24" cy="28" r="2"/></svg><span class="file-label">เลือกไฟล์ .BIN ต้นฉบับภาษาญี่ปุ่น</span><span class="file-help">SLPS-03445 · อิมเมจทั้งแผ่น · 253.75 MiB</span><input id="rom-file" type="file" accept=".bin" aria-describedby="file-hint"></label>
+   <p id="selected-file" class="selected-file">ยังไม่ได้เลือกไฟล์</p>
+   <p id="file-hint" class="hint">ใช้ BIN ที่ยังไม่แปะแพตช์ ชื่อไฟล์เปลี่ยนได้ แต่ข้อมูลต้องตรงกับรุ่นที่รองรับ</p>
+   <div class="actions"><button id="patch-button" class="button primary" disabled>ตรวจสอบและแปะแพตช์ <span aria-hidden="true">→</span></button><button id="cancel-button" class="button subtle" hidden>ยกเลิก</button></div>
+   <div id="progress-wrap" class="progress-wrap" hidden><div class="progress-heading"><span id="progress-label">กำลังเตรียมแพตช์</span><span id="progress-value">0%</span></div><progress id="progress" max="100" value="0" aria-label="ความคืบหน้าการแปะแพตช์"></progress></div>
+   <p id="status" class="status" role="status" aria-live="polite">เลือก BIN เพื่อเริ่มต้น ไฟล์ต้นฉบับจะไม่ถูกเขียนทับ</p>
+   <div id="result" class="result" hidden><div class="success-mark" aria-hidden="true">✓</div><div><h3>ฉบับภาษาไทยพร้อมแล้ว</h3><p>ตรวจผลลัพธ์ผ่าน SHA-256 และ CRC32 แล้ว</p><div class="downloads"><a id="download-bin" class="button primary" download>ดาวน์โหลด BIN ภาษาไทย ↓</a><a id="download-cue" class="button secondary" download>ดาวน์โหลด CUE ↓</a></div><p class="hint">บันทึกทั้งสองไฟล์ไว้ในโฟลเดอร์เดียวกัน แล้วเปิด CUE ใน DuckStation<br>ชื่อ BIN ต้องเป็น <code>TsuriKichiSanpei_TH_v0.33.bin</code> ตามที่ CUE อ้างอิง</p></div></div>
+   <noscript><p class="status error">กรุณาเปิด JavaScript เพื่อใช้เครื่องมือแปะแพตช์ในเบราว์เซอร์</p></noscript>
+  </section>
+  <div class="support-grid"><section class="support-card" aria-labelledby="cheats-title"><span class="section-tag">ตัวเลือกเพิ่มเติม</span><h2 id="cheats-title">เล่นในจังหวะของคุณ</h2><p>สูตรเสริมสำหรับ DuckStation แยกจากแพตช์ภาษาไทย เลือกเปิดใช้เองได้ตามต้องการ</p><ul class="cheat-list"><li>ปลดล็อกทุกเนื้อเรื่อง</li><li>ปลดล็อกทุกจุดตกปลาในโหมดอิสระ</li><li>คงแถบแรงตึงไว้กลางเกจ</li><li>ลดความเร็ว Casting</li><li>เติม CAST ในล่ามุจึโกโร่</li><li>ลดความเร็ว HIT ในล่ามุจึโกโร่</li></ul><a class="text-link" href="./downloads/SLPS-03445.cht" download="SLPS-03445.cht">ดาวน์โหลด SLPS-03445.cht <span aria-hidden="true">↗</span></a><p class="hint">รวม 6 สูตรหลัก และคำสั่งคืนความเร็ว 2 คำสั่ง<br>อ่าน <a href="./downloads/CHEATS_TH.txt">วิธีติดตั้งและปิดสูตร</a> ก่อนใช้งาน</p></section>
+   <section class="support-card" aria-labelledby="help-title"><span class="section-tag">ก่อนออกเดินทาง</span><h2 id="help-title">สิ่งที่ควรรู้</h2><details><summary>ต้องใช้ไฟล์เกมแบบไหน?</summary><p>BIN ภาษาญี่ปุ่นแบบแทร็กเดียวของ SLPS-03445 ขนาด 266,077,056 ไบต์ และ SHA-256 ตรงตามด้านล่าง เว็บนี้ไม่รับ CHD, ZIP, ไฟล์ย่อยจากแผ่น หรืออิมเมจที่จัดเรียงใหม่</p></details><details><summary>ขึ้นว่า BIN ไม่ตรง ต้องทำอย่างไร?</summary><p>ตรวจว่าเลือกต้นฉบับภาษาญี่ปุ่นที่ยังไม่ได้แก้ หากเป็นคนละดัมพ์หรือคนละการจัดวางแผ่น ต้องใช้แพตช์ที่สร้างให้ตรงกับอิมเมจนั้น การเปลี่ยนชื่อหรือเติมศูนย์ท้ายไฟล์ไม่ช่วยให้ใช้แพตช์นี้ได้</p></details><details><summary>ต้องบันทึก CUE ด้วยหรือไม่?</summary><p>แนะนำให้ดาวน์โหลด BIN และ CUE คู่กัน บันทึกไว้โฟลเดอร์เดียวกัน แล้วเปิด CUE หากเบราว์เซอร์เติม “(1)” ในชื่อ BIN ให้เปลี่ยนกลับเป็นชื่อที่ CUE อ้างอิง</p></details><details><summary>ข้อมูลรุ่นและค่าแฮชที่รองรับ</summary><p>ฉบับแปล <strong>v0.33</strong> · <strong>SLPS-03445</strong></p><dl class="hashes"><dt>ต้นฉบับญี่ปุ่น · SHA-256</dt><dd><code>43f35a2a7f5057e0ffc86740221e26cd8f9050f0572b67e9a0749ca0a5981419</code></dd><dt>ผลลัพธ์ภาษาไทย · SHA-256</dt><dd><code>49e83ba6212cebfe26d3ea779a4c434269e37a98437d4d40e06cc61a6bdb785d</code></dd></dl><a href="./patches/patch_th.bps" download>ดาวน์โหลด BPS แยก</a></details></section></div>
+ </main>
+ <footer><span>air4mydream · Tsurikichi Sanpei Thai Translation</span><a href="https://github.com/air4mydream/" rel="noopener noreferrer">GitHub ↗</a></footer>
+</body>
+</html>
